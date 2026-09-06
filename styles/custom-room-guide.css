@@ -1,0 +1,25 @@
+/* custom-room-guide.css - layout tweaks for room-guide section */
+
+/* Make subsection groups sit side-by-side for better horizontal layout */
+#room-guide .subsection {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+#room-guide .subsection > .subsection-group {
+  flex: 1 1 calc(33% - 1rem);
+  min-width: 220px;
+}
+
+/* Ensure gallery inside groups uses full width */
+#room-guide .gallery-grid { display: block; }
+#room-guide .gallery-card { width: 100%; }
+#room-guide .gallery-image { height: 180px; object-fit: cover; width:100%; border-radius:8px }
+
+/* On small screens stack vertically */
+@media (max-width: 800px){
+  #room-guide .subsection { flex-direction: column; }
+  #room-guide .subsection > .subsection-group { flex: 1 1 100%; }
+}
