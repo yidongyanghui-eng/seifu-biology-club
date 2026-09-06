@@ -1,0 +1,734 @@
+/* ===========================
+   リセット・基本スタイル
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2d7a6f;
+    --secondary-color: #4ca6a0;
+    --accent-color: #a8d5d0;
+    --dark-blue: #1a5e5a;
+    --light-bg: #f0faf9;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-light: #5a6c7d;
+    --border-color: #d0e8e5;
+    --shadow: 0 4px 15px rgba(45, 122, 111, 0.1);
+    --shadow-hover: 0 8px 25px rgba(45, 122, 111, 0.2);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ===========================
+   ヘッダー
+   =========================== */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav {
+    flex: 1;
+    margin-left: 2rem;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--white);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    border-bottom-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* ===========================
+   コンテナ・セクション
+   =========================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 4rem 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ===========================
+   ヒーローセクション
+   =========================== */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-image {
+    margin-top: 2rem;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===========================
+   生物部についてセクション
+   =========================== */
+.about-section {
+    background-color: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-card {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.about-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.about-card ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.about-card ul li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-card ul li::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+}
+
+.activity-days {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.member-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===========================
+   部室案内セクション
+   =========================== */
+.room-guide-section {
+    background-color: var(--light-bg);
+}
+
+.subsection {
+    margin-bottom: 3rem;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 2rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.subsection-group {
+    margin-bottom: 2rem;
+}
+
+.subsection-subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* ===========================
+   ギャラリー
+   =========================== */
+.gallery-section {
+    background-color: var(--white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.gallery-card:hover .gallery-image {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h5 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   清風高校についてセクション
+   =========================== */
+.school-section {
+    background-color: var(--light-bg);
+}
+
+.school-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.school-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.school-card h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.school-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ===========================
+   ボタン
+   =========================== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(45, 122, 111, 0.3);
+    color: var(--white);
+}
+
+/* ===========================
+   モーダル（画像拡大表示）
+   =========================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--white);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* ===========================
+   フッター
+   =========================== */
+.footer {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===========================
+   アニメーション
+   =========================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-title {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in-text {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease forwards;
+}
+
+/* 遅延アニメーション用 */
+.gallery-card:nth-child(1) { animation-delay: 0.1s; }
+.gallery-card:nth-child(2) { animation-delay: 0.2s; }
+.gallery-card:nth-child(3) { animation-delay: 0.3s; }
+.gallery-card:nth-child(4) { animation-delay: 0.4s; }
+
+.about-card:nth-child(1) { animation-delay: 0s; }
+.about-card:nth-child(2) { animation-delay: 0.1s; }
+.about-card:nth-child(3) { animation-delay: 0.2s; }
+.about-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* ===========================
+   レスポンシブデザイン
+   =========================== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.5rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 1.1rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid,
+    .gallery-grid-large {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-image {
+        height: 200px;
+    }
+
+    .member-stats {
+        gap: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .section-title::after {
+        width: 60px;
+    }
+
+    .gallery-grid,
+    .gallery-grid-large {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-image {
+        height: 250px;
+    }
+
+    .school-card {
+        padding: 1.5rem;
+    }
+
+    .subsection-title {
+        font-size: 1.4rem;
+    }
+
+    .subsection-subtitle {
+        font-size: 1.1rem;
+    }
+}
