@@ -167,6 +167,11 @@ a:hover {
     line-height: 1.2;
 }
 
+/* Make the hero title much lighter (more transparent white) */
+.hero .section-title {
+    color: rgba(255,255,255,0.35);
+}
+
 .hero-text {
     font-size: 1.3rem;
     margin-bottom: 2rem;
